@@ -8,6 +8,7 @@ import useAuth from '@/hooks/useAuth';
 import { useRecoilValue } from 'recoil';
 import { modalState } from '@/atoms/modalAtoms';
 import Modal from '@/components/Modal';
+import useList from '../hooks/useList'
 
 
 interface Props {
@@ -32,8 +33,9 @@ export default function Home({
   topRated,
   trendingNow,
 }: Props) {
-  const { loading } = useAuth();
+  const { user, loading } = useAuth();
   const showModal = useRecoilValue(modalState);
+  const list = useList(user?.uid)
 
   if(loading) return null;
 
@@ -55,6 +57,8 @@ export default function Home({
           <Row title="Top Rated" movies={topRated} />
           <Row title="Action Thrillers" movies={actionMovies} />
           {/* My List */}
+          {list.length > 0 && <Row title="My List" movies={list} />}
+
           <Row title="Comedies" movies={comedyMovies} />
           <Row title="Scary Movies" movies={horrorMovies} />
           <Row title="Romance Movies" movies={romanceMovies} />
