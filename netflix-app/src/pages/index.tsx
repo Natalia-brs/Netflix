@@ -7,6 +7,7 @@ import Row from '@/components/Row';
 import useAuth from '@/hooks/useAuth';
 import { useRecoilValue } from 'recoil';
 import { modalState } from '@/atoms/modalAtoms';
+import Modal from '@/components/Modal';
 
 
 interface Props {
@@ -60,7 +61,7 @@ export default function Home({
           <Row title="Documentaries" movies={documentaries} />
        </section>
      </main>
-     { /* Modal */ }
+     { showModal && <Modal />}  
     </div>
   )
 }
