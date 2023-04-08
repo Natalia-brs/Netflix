@@ -118,18 +118,18 @@ useEffect(() => {
 
   return (
   <MuiModal 
-    className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl 
-    overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
-    open= { showModal } onClose={ handleClose }> 
-     <>
-        <button
-          className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818]"
-          onClick={handleClose}
+  className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
+  open= { showModal } onClose={ handleClose }> 
+    <>
+      <button
+        className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818]"
+        onClick={handleClose}
         >
-          <HiX className="h-6 w-6" />
-        </button>
+        <HiX className="h-6 w-6" />
+      </button>
 
-      <div className="relative pt-[56.25%]">
+      <div 
+       className="relative pt-[56.25%]">
         <ReactPlayer
             url={`https://www.youtube.com/watch?v=${trailer}`}
             width="100%"
@@ -140,18 +140,16 @@ useEffect(() => {
           />
 
         <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
-          <div className="flex space-x-2">  
-             <button className="flex items-center gap-x-2 rounded bg-white px-8 text-xl font-bold 
-             text-black transition hover:bg-[#e6e6e6]">
-                <FaPlay className="h-7 w-7 text-black"/>
-                Play
+          <div className="flex space-x-2"> 
+            <button className="flex items-center gap-x-2 rounded bg-white px-8 text-xl font-bold  text-black transition hover:bg-[#e6e6e6]">
+              <FaPlay className="h-7 w-7 text-black"/>
+              Play
             </button>
-
-            <button className="modalButton" onClick={handleList}>
+             <button className="modalButton" onClick={handleList}>
                 {addedToList ? (
-                 <HiOutlineBadgeCheck className="h-7 w-7" />
+                <HiOutlineBadgeCheck className="h-7 w-7" />
                 ) : (
-                  <HiOutlinePlusCircle className="h-7 w-7" />
+                <HiOutlinePlusCircle className="h-7 w-7" />
                 )}
               </button>
           </div>
@@ -174,8 +172,7 @@ useEffect(() => {
             <p className="font-light"> 
               {movie?.release_date || movie?.first_air_date}
             </p>
-            <div className="flex h-4 items-center justify-center rounded border 
-            border-white/40 px-1.5 text-xs">
+            <div className="flex h-4 items-center justify-center rounded border border-white/40 px-1.5 text-xs">
               HD
             </div>
           </div>
@@ -189,17 +186,15 @@ useEffect(() => {
                  <span className="text-[gray]">Genres:</span>{' '}
                   {genres.map((genre) => genre.name).join(', ')}
             </div>
-
             <div>
                   <span className="text-[gray]">Original language:</span>{' '}
                   {movie?.original_language}
-            </div>
-            
-            <div>
+             </div>    
+             <div>
                   <span className="text-[gray]">Total votes:</span>{' '}
                   {movie?.vote_count}
-            </div>
-          </div>
+             </div>
+           </div>
           </div>
         </div>
       </div>
