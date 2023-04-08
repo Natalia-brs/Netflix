@@ -1,8 +1,8 @@
-import Image from "next/image"
-import { Movie } from '../../typing'
-import { useEffect, useState } from "react"
-import { baseUrl } from "@/constants/movie"
-import { FaPlay } from 'react-icons/fa'
+import Image from "next/image";
+import { Movie } from '../../typing';
+import { useEffect, useState } from "react";
+import { baseUrl } from "@/constants/movie";
+import { FaPlay } from 'react-icons/fa';
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 interface Props {

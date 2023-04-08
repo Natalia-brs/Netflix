@@ -1,5 +1,5 @@
 import { Movie } from '../../typing';
-import Image from "next/image"
+import Image from "next/image";
 
 interface Props {
     movie: Movie 
