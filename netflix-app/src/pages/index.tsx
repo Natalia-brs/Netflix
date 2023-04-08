@@ -2,13 +2,31 @@ import Header from '@/components/Header'
 import Head from 'next/head'
 import requests from '@/utils/request'
 import { Movie } from '../../typing'
+import Banner from '@/components/Banner'
 
 interface Props {
   netflixOriginals: Movie[]
+  trendingNow: Movie[]
+  topRated: Movie[]
+  actionMovies: Movie[]
+  comedyMovies: Movie[]
+  horrorMovies: Movie[]
+  romanceMovies: Movie[]
+  documentaries: Movie[]
 }
 
-export default function Home({ netflixOriginals }: Props) {
-  console.log(netflixOriginals)
+
+export default function Home({ 
+  netflixOriginals,
+  actionMovies,
+  comedyMovies,
+  documentaries,
+  horrorMovies,
+  romanceMovies,
+  topRated,
+  trendingNow,
+}: Props) {
+
   return (
     <div>
       <Head>
@@ -19,6 +37,7 @@ export default function Home({ netflixOriginals }: Props) {
       </Head>
       <Header />
       <main>
+        <Banner netflixOriginals={ netflixOriginals } />
       <section>
         { /* Row */ }
         { /* Row */ }
