@@ -2,9 +2,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiSearch } from "react-icons/hi";
 import { HiBell } from "react-icons/hi2";
+import useAuth from '@/hooks/useAuth';
 
 function Header() {
   const [ isScrolled, setIsScrolled ] = useState(false);
+  const { logout } = useAuth();
 
 //Adicionando o scroll do header, 
 useEffect(() => {
@@ -45,13 +47,14 @@ useEffect(() => {
             <HiSearch className="hidden sm:inline h-6 w-6"/>
             <p className="hidden lg:inline"> Infantil </p>
             <HiBell className="h-6 w-6"/>
-            <Link href="/account">
+          {/* <Link href="/account"> */}
             <img
+            onClick={ logout }
             src="https://rb.gy/g1pwyx"
             alt="header-log"
             className="cursor-pointer rounded"
           />
-            </Link>
+            {/* </Link> */}
         </div>
     </header>
   )
