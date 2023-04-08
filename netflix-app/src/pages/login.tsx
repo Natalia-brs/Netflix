@@ -17,7 +17,13 @@ function Login() {
     handleSubmit, 
     formState: { errors } 
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
+    if(login) {
+    //  await signIn(email, password)
+    } else {
+      // await signOut(email, password)
+    }
+  }
 
   return (
     <div className="relative flex h-screen w-screen flex-col 
@@ -32,9 +38,9 @@ function Login() {
       <Image
         alt='login-image'
         src={ netflix }
-        layout="fill"
+        fill
         className="-z-10 !hidden opacity-60 sm:!inline"
-        objectFit="cover"
+        style={{objectFit:"cover"}}
       />
 
        <img
@@ -80,6 +86,7 @@ function Login() {
         </div>
 
         <button
+        onClick={() => setLogin(true)}
         className="w-full rounded bg-[#E50914] py-3 font-semibold"
         > 
         Sign In 
@@ -87,6 +94,7 @@ function Login() {
         <div className="text-[gray]">
           New to Netflix?{' '}
           <button
+          onClick={() => setLogin(false)}
             className="cursor-pointer text-white hover:underline"
             type="submit"
           >

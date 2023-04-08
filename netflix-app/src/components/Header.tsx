@@ -28,6 +28,7 @@ useEffect(() => {
         <img
           src="https://rb.gy/ulxxee"
           width={100}
+          alt="header-log"
           height={100}
           className="cursor-pointer object-contain"
         />
@@ -47,7 +48,7 @@ useEffect(() => {
             <Link href="/account">
             <img
             src="https://rb.gy/g1pwyx"
-            alt=""
+            alt="header-log"
             className="cursor-pointer rounded"
           />
             </Link>
